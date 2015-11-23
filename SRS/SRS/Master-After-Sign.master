@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master-After-Sign.master.cs" Inherits="Master_After_Sign" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="main">
+    <div id="links">
+      <!-- **** INSERT LINKS HERE **** -->
+      <%--<a href="#">another link</a> | <a href="#">another link</a> |--%> <%--<a href="#">Sign in</a> |--%> <a href="#">Sign Out</a>
+    </div>
+    <div id="logo"><h1>National Reconstruction Aid Society</h1></div>
+    <div id="content">
+      <div id="menu">
+        <ul>
+          <li><a id="selected" href="index.html">home</a></li>
+<%--          <li><a href="page1.html">page 1</a></li>
+          <li><a href="page2.html">page 2</a></li>--%>
+          <li><a href="">About us</a></li>
+          <li><a href="">contact us</a></li>
+        </ul>
+      </div>
+      <div id="column1">
+        <div class="sidebaritem">
+          <div class="sbihead">
+            <h1>Let&#39;s building Syria ..</h1>
+          </div>
+          <div class="sbicontent">
+            <!-- **** INSERT NEWS ITEMS HERE **** -->
+            <%--<h2>01.09.2006</h2>--%>
+            <p>Our message</p>
+<%--            <p><a href="#">read more ...</a></p>--%>
+            <p>Our message</p>
+            <p>Our message</p>
+<%--            <h2>01.09.2006</h2>--%>
+            <p>Our message</p>
+<%--            <p><a href="#">read more ...</a></p>--%>
+          </div>
+        </div>
+        <div class="sidebaritem">
+          <div class="sbihead">
+            <h1>additional links</h1>
+          </div>
+          <div class="sbilinks">
+            <!-- **** INSERT ADDITIONAL LINKS HERE **** -->
+            <ul>
+              <li><a href="">New Request</a></li>
+              <li><a href="">Brows Request</a></li>
+              <li><a href="">Assign To</a></li>
+              <li><a href="">Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebaritem">
+          <div class="sbihead">
+            <h1>other information</h1>
+          </div>
+          <div class="sbicontent">
+            <!-- **** INSERT OTHER INFORMATION HERE **** -->
+            <p>
+              This space can be used for additional information such as a contact phone number, address
+              or maybe even a graphic.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="column2">
+        <h1>introduction</h1>
+          <p>hi , this is the second master page for useing after sign in</p>
+        <!-- **** INSERT PAGE CONTENT HERE **** -->
+<%--        
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+         
+        </asp:ContentPlaceHolder>
+    </div>--%>
+
+
+
+
+
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

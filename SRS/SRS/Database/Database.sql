@@ -1,3 +1,6 @@
+Create Database SRS;
+use SRS;
+
 create table sys_role
 (sysrole_id int not null
 ,sysrole_name varchar(20) not null
@@ -54,7 +57,7 @@ create table user_application
 ,appl_assign_date datetime null
 )
 go
-alter table user_application add constraint user_application_pk primary key (appl_id_id)
+alter table user_application add constraint user_application_pk primary key (appl_id)
 go
 alter table user_application add constraint user_application_user_fk foreign key (appl_sysuser_id) references sys_user (sysuser_id)
 go
@@ -62,4 +65,6 @@ alter table user_application add constraint user_application_estatetype_fk forei
 go
 alter table user_application add constraint user_application_assignuser_fk foreign key (appl_assign_sysuser_id) references sys_user (sysuser_id)
 go
-insert into sys_user (1,'admin','admin','1',getdate(),null)
+insert into sys_user values (1,'admin','admin','1', GETDATE(), null);
+
+

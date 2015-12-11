@@ -20,6 +20,8 @@ create table sys_user
 go
 alter table sys_user add constraint sys_user_pk primary key (sysuser_id)
 go
+alter table sys_user add constraint sys_name_unique unique (sysuser_name)
+go
 alter table sys_user add constraint sys_user_role_fk foreign key (sysuser_role_id) references sys_role (sysrole_id)
 go
 create table user_information
@@ -73,6 +75,10 @@ insert into sys_user values (2,'volunteerA','admin','1', GETDATE(), 2);
 insert into sys_user values (3,'volunteerB','admin','1', GETDATE(), 2);
 insert into sys_user values (4,'volunteerC','admin','1', GETDATE(), 2);
 
-delete sys_user
+Select usr.sysuser_name, r.sysrole_name
+from [sys_user] usr inner join [sys_role] r on r.sysrole_id = usr.sysuser_role_id
+where usr.sysuser_name='admin' and usr.sysuser_password ='admin'
+
+insert into sys_user values ((select max(sysuser_id)+1 from sys_user),'volunteerC','admin','1', GETDATE(), 2);
 
 

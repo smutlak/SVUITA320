@@ -16,7 +16,16 @@ namespace SRS
             {
                 // If User is Authenticated then moved to a main page
                 if (User.Identity.IsAuthenticated)
-                    Response.Redirect("adminWelcome.aspx");
+                {
+                    if ((Session["roleName"] != null) && (Session["roleName"].Equals("admins")))
+                    {
+                        Response.Redirect("adminWelcome.aspx");
+                    }
+                    else if ((Session["roleName"] != null) && (Session["roleName"].Equals("citizens")))
+                    {
+                        Response.Redirect("CitizenWelcome.aspx");
+                    }
+                }
             }
         }
 
@@ -28,7 +37,7 @@ namespace SRS
 
             sqlstring = "Select usr.sysuser_name, r.sysrole_name" +
                         " from [sys_user] usr inner join [sys_role] r on r.sysrole_id = usr.sysuser_role_id " +
-                        " where usr.sysuser_name='" + username + "' and usr.sysuser_password ='" + password + "'";
+                        " where usr.sysuser_name='" + Login1.UserName + "' and usr.sysuser_password ='" + Login1.Password + "'";
 
             // create a connection with sqldatabase 
             System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(
@@ -39,28 +48,35 @@ namespace SRS
 
             // create a sqldatabase reader which will execute the above command to get the values from sqldatabase
             System.Data.SqlClient.SqlDataReader reader;
-
-            // open a connection with sqldatabase
-            con.Open();
-
-            // execute sql command and store a return values in reade
-            reader = comm.ExecuteReader();
-
-            // check if reader hase any value then return true otherwise return false
-            if (reader.Read())
+            try
             {
-                
-                String userName = reader.GetString(1);
-                String roleName = reader.GetString(2);
+                // open a connection with sqldatabase
+                con.Open();
 
-                e.Authenticated = true;
-                Session["Check"] = true;
-                Session["userName"] = userName;
-                Session["roleName"] = roleName;
-                
+                // execute sql command and store a return values in reade
+                reader = comm.ExecuteReader();
+
+                // check if reader hase any value then return true otherwise return false
+                if (reader.Read())
+                {
+
+                    String userName = reader.GetString(0);
+                    String roleName = reader.GetString(1);
+
+                    e.Authenticated = true;
+                    Session["Check"] = true;
+                    Session["userName"] = userName;
+                    Session["roleName"] = roleName;
+
+                }
+                else
+                    e.Authenticated = false;
             }
-            else
-                e.Authenticated = false;
+            
+            finally
+            {
+                con.Close();
+            }
             
         }
 

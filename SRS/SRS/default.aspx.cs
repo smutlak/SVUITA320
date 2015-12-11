@@ -22,32 +22,13 @@ namespace SRS
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            Boolean blnresult;
-            blnresult = false;
 
-            // Pass UserName  and Password from login1 control to an authentication function which will check will check the user name and password from sql server.
-            // Then will retrun a true or false value into blnresult variable
-            blnresult = Authentication(Login1.UserName, Login1.Password);
-
-            // If blnresult has a true value then authenticate user 
-            if (blnresult == true)
-            {
-                // This is the actual statement which will authenticate the user
-                e.Authenticated = true;
-
-                // Store your authentication mode in session variable 
-                Session["Check"] = true;
-            }
-            else
-                // If user faild to provide valid user name and password
-                e.Authenticated = false;
-        }
-
-        // Function name Authentication which will get check the user_name and passwrod from sql database then return a value true or false
-        protected static String Authentication(string username, string password)
-        {
             string sqlstring;
-            sqlstring = "Select sysuser_name, sysuser_password from [sys_user] where sysuser_name='" + username + "' and sysuser_password ='" + password + "'";
+            //sqlstring = "Select sysuser_name, sysuser_password from [sys_user] where sysuser_name='" + username + "' and sysuser_password ='" + password + "'";
+
+            sqlstring = "Select usr.sysuser_name, r.sysrole_name" +
+                        " from [sys_user] usr inner join [sys_role] r on r.sysrole_id = usr.sysuser_role_id " +
+                        " where usr.sysuser_name='" + username + "' and usr.sysuser_password ='" + password + "'";
 
             // create a connection with sqldatabase 
             System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(
@@ -67,9 +48,21 @@ namespace SRS
 
             // check if reader hase any value then return true otherwise return false
             if (reader.Read())
-                return true;
+            {
+                
+                String userName = reader.GetString(1);
+                String roleName = reader.GetString(2);
+
+                e.Authenticated = true;
+                Session["Check"] = true;
+                Session["userName"] = userName;
+                Session["roleName"] = roleName;
+                
+            }
             else
-                return false;
+                e.Authenticated = false;
+            
         }
+
     }
 }

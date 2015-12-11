@@ -1,0 +1,5 @@
+C:\Users\Sameer\Documents\GitHub\SVUITA320\SRS2\SRS2\SRS2\bin\SRS2.dll
+C:\Users\Sameer\Documents\GitHub\SVUITA320\SRS2\SRS2\SRS2\bin\SRS2.pdb
+C:\Users\Sameer\Documents\GitHub\SVUITA320\SRS2\SRS2\SRS2\obj\Debug\SRS2.dll
+C:\Users\Sameer\Documents\GitHub\SVUITA320\SRS2\SRS2\SRS2\obj\Debug\SRS2.pdb
+C:\Users\Sameer\Documents\GitHub\SVUITA320\SRS2\SRS2\SRS2\obj\Debug\SRS2.csprojResolveAssemblyReference.cache

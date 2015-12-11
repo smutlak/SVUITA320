@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-         <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate1"></asp:Login>
+         <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate1" CreateUserText="Sign up"></asp:Login>
+        
     </div>
     </form>
 </body>

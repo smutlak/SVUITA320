@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Configuration; 
 
 namespace SRS
 {
@@ -19,11 +20,11 @@ namespace SRS
                 {
                     if ((Session["roleName"] != null) && (Session["roleName"].Equals("admins")))
                     {
-                        Response.Redirect("adminWelcome.aspx");
+                        Response.Redirect("~/Secure/adminWelcome.aspx");
                     }
                     else if ((Session["roleName"] != null) && (Session["roleName"].Equals("citizens")))
                     {
-                        Response.Redirect("CitizenWelcome.aspx");
+                        Response.Redirect("~/Secure/CitizenWelcome.aspx");
                     }
                 }
             }
@@ -40,9 +41,10 @@ namespace SRS
                         " where usr.sysuser_name='" + Login1.UserName + "' and usr.sysuser_password ='" + Login1.Password + "'";
 
             // create a connection with sqldatabase 
+           // System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(
+           //              " Data Source=SD;Initial Catalog=SRS;User ID=sa;Password=Ab123456;Connect Timeout=10;TrustServerCertificate=True ");
             System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(
-                         " Data Source=SD;Initial Catalog=SRS;User ID=sa;Password=Ab123456;Connect Timeout=10;TrustServerCertificate=True ");
-
+                WebConfigurationManager.ConnectionStrings["SRSDB"].ConnectionString);
             // create a sql command which will user connection string and your select statement string 
             System.Data.SqlClient.SqlCommand comm = new System.Data.SqlClient.SqlCommand(sqlstring, con);
 

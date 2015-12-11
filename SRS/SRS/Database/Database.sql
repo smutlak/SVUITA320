@@ -5,7 +5,6 @@ create table sys_role
 (sysrole_id int not null
 ,sysrole_name varchar(20) not null
 ,sysrole_desc varchar(100) null
-,sysrole_category varchar(1) not null
 )
 go
 alter table sys_role add constraint sys_role_pk primary key (sysrole_id)
@@ -65,6 +64,15 @@ alter table user_application add constraint user_application_estatetype_fk forei
 go
 alter table user_application add constraint user_application_assignuser_fk foreign key (appl_assign_sysuser_id) references sys_user (sysuser_id)
 go
-insert into sys_user values (1,'admin','admin','1', GETDATE(), null);
+
+insert into sys_role(sysrole_id, sysrole_name, sysrole_desc) values(1, 'admins', 'the admins role');
+insert into sys_role(sysrole_id, sysrole_name, sysrole_desc) values(2, 'volunteers', 'the volunteers role');
+insert into sys_role(sysrole_id, sysrole_name, sysrole_desc) values(3, 'citizens', 'the citizens role');
+insert into sys_user values (1,'admin','admin','1', GETDATE(), 1);
+insert into sys_user values (2,'volunteerA','admin','1', GETDATE(), 2);
+insert into sys_user values (3,'volunteerB','admin','1', GETDATE(), 2);
+insert into sys_user values (4,'volunteerC','admin','1', GETDATE(), 2);
+
+delete sys_user
 
 

@@ -19,7 +19,7 @@ namespace SRS
         {
             String sqlstring;
             sqlstring = "insert into sys_user values ((select max(sysuser_id)+1 from sys_user),'" +
-                CreateUserWizard1.UserName + "','" + CreateUserWizard1.Password + "','1', GETDATE(), 2);";
+                CreateUserWizard1.UserName + "','" + CreateUserWizard1.Password + "','1', GETDATE(), 3);";
 
             // create a connection with sqldatabase 
             //System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(

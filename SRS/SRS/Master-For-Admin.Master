@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master-After-Sign.master.cs" Inherits="Master_After_Sign" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master-For-Admin.master.cs" Inherits="SRS.Master_For_Admin" %>
 
 <!DOCTYPE html>
 
@@ -37,7 +37,7 @@
           <div class="sbilinks">
             <!-- **** INSERT ADDITIONAL LINKS HERE **** -->
             <ul>
-              <li><a href="#">New Application</a></li>
+              <li><a href="#">Assign To</a></li>
               <li><a href="#">Brows Applications</a></li>
               <li><a href="#">Sign Out</a></li>
             </ul>
@@ -62,7 +62,7 @@
         <!-- **** INSERT PAGE CONTENT HERE **** -->
         
     <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder3" runat="server">
          
         </asp:ContentPlaceHolder>
     </div>
@@ -76,3 +76,4 @@
     </form>
 </body>
 </html>
+

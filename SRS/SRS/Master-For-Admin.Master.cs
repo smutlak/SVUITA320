@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SRS2
+namespace SRS
 {
-    public partial class main_page : System.Web.UI.Page
+    public partial class Master_For_Admin : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

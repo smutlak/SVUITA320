@@ -18,8 +18,13 @@ namespace SRS
         protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
         {
             String sqlstring;
-            sqlstring = "insert into sys_user values ((select max(sysuser_id)+1 from sys_user),'" +
-                CreateUserWizard1.UserName + "','" + CreateUserWizard1.Password + "','1', GETDATE(), 3);";
+           // sqlstring = "insert into sys_user values ((select max(sysuser_id)+1 from sys_user),'" +
+           //     CreateUserWizard1.UserName + "','" + CreateUserWizard1.Password + "','1', GETDATE(), 3);";
+
+            //SQL 2005 version
+            sqlstring = "insert into sys_user select max(sysuser_id)+1, '" +
+                CreateUserWizard1.UserName + "','" + CreateUserWizard1.Password +
+                "','1', GETDATE(), 3 from sys_user ";
 
             // create a connection with sqldatabase 
             //System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(

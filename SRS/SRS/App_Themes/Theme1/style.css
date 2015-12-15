@@ -6,6 +6,7 @@ body
   padding: 0px;
   margin: 0px;
   font-size: .68em;
+  background-size: 1050px;
 }
 
 p
@@ -78,17 +79,17 @@ ol li
 
 /* main container */
 #main
-{ width: 780px;
+{ width: 1050px;
   margin-left: auto; 
   margin-right: auto;
 }
 
 /* links above the logo / footer */
 #links, #footer
-{ margin-left: auto; 
+{ margin-left: 0px; 
   margin-right: auto;
-  padding: 10px 21px 0px 19px;
-  width: 720px;
+  /*padding: 10px 21px 0px 19px;*/
+  width: 1040px;
   height: 26px;
   font-size: 94%;
   text-transform: uppercase;
@@ -104,10 +105,10 @@ ol li
 
 /* logo */
 #logo
-{ margin-left: auto; 
+{ margin-left: 0px; 
   margin-right: auto;
-  width: 760px;
-  height: 100px;
+  width: 1040px;
+  height: 200px;
   text-align: left;
 }
 
@@ -121,8 +122,8 @@ ol li
 /* navigation menu */
 #menu
 { height: 42px;
-  width: 760px;
-  margin-left: auto; 
+  width: 1040px;
+  margin-left: 0; 
   margin-right: auto;
 }
 
@@ -147,7 +148,7 @@ ol li
 #content
 { margin-left: auto; 
   margin-right: auto;
-  width: 760px;
+  width: 1050px;
   height: auto;
   padding: 0px;
   overflow: hidden;
@@ -157,7 +158,7 @@ ol li
 #column1
 { width: 207px;
   float: right;
-  padding: 16px 0px 15px 0px;
+  padding: 16px 10px 15px 0px;
 }
 
 .sidebaritem
@@ -210,7 +211,7 @@ ol li
 /* column 2 - page content */
 #column2
 { text-align: justify;
-  width: 512px;
+  width: 800px;
   float: left;
   padding: 12px 3px 15px 19px;
 }

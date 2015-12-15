@@ -14,6 +14,8 @@ blockquote
 #main
 { background: #FFFFFF url(back.png) repeat-y;
   color: #70695A;
+  background-position:right;
+  
 }
 
 #links, #footer, #menu, #menu li a

@@ -13,7 +13,7 @@
         <div id="main">
     <div id="links">
       <!-- **** INSERT LINKS HERE **** -->
-       <a href="#">Sign Out</a>
+       <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/signout.aspx">Sign Out</asp:HyperLink>
     </div>
     <div id="logo"><h1 style="padding-top:30px;">National Reconstruction  <br /> <br />Aid Society</h1></div>
     <div id="content">
@@ -39,7 +39,7 @@
             <ul>
               <li><a href="#">New Application</a></li>
               <li><a href="#">Brows Applications</a></li>
-              <li><a href="#">Sign Out</a></li>
+              <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/signout.aspx">Sign Out</asp:HyperLink></li>
             </ul>
           </div>
         </div>

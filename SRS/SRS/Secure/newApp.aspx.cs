@@ -41,6 +41,18 @@ namespace SRS.Secure
                 }
             }
         }
+
+        protected void btnOK_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                //labelMessage.Text = "Your reservation has been processed.";
+
+                String estateType = ddlStateType.SelectedValue;
+                String strStateNo = txtStateNo.Text;
+                String strAddress = txtAddress.Text;
+            }
+        }
     }
 
     

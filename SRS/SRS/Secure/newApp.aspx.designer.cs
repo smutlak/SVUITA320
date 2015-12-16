@@ -31,6 +31,15 @@ namespace SRS.Secure {
         protected global::System.Web.UI.WebControls.DropDownList ddlStateType;
         
         /// <summary>
+        /// rfv1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv1;
+        
+        /// <summary>
         /// txtStateNo control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace SRS.Secure {
         protected global::System.Web.UI.WebControls.TextBox txtStateNo;
         
         /// <summary>
+        /// rfv2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv2;
+        
+        /// <summary>
         /// txtAddress control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace SRS.Secure {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        
+        /// <summary>
+        /// rfv3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv3;
         
         /// <summary>
         /// btnOK control.

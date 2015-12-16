@@ -11,7 +11,7 @@
     </p>
     <p>
         <label>State type</label>
-        <asp:DropDownList ID="ddStateType" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="ddlStateType" runat="server"></asp:DropDownList>
     </p>
     <p>
         <label>State No.</label>

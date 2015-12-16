@@ -8,3 +8,7 @@ insert into sys_user values (4,'v3','v3','1', GETDATE(), 2);
 insert into sys_user values (5,'c1','c1','1', GETDATE(), 3);
 insert into sys_user values (6,'c2','c2','1', GETDATE(), 3);
 insert into sys_user values (7,'c3','c3','1', GETDATE(), 3);
+insert into estate_type values (1,'House','Owned house')
+insert into estate_type values (2,'Store','Storehouse')
+insert into estate_type values (3,'Workshop','Workshop')
+insert into estate_type values (4,'Land','Land')

@@ -70,6 +70,7 @@
     <Content Include="Secure\CitizenWelcome.aspx" />
     <Content Include="default.aspx" />
     <Content Include="default_old.aspx" />
+    <Content Include="Secure\newApp.aspx" />
     <Content Include="signout.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="Web.config" />
@@ -125,6 +126,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Secure\newApp.aspx.cs">
+      <DependentUpon>newApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secure\newApp.aspx.designer.cs">
+      <DependentUpon>newApp.aspx</DependentUpon>
     </Compile>
     <Compile Include="signout.aspx.cs">
       <DependentUpon>signout.aspx</DependentUpon>

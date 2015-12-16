@@ -16,7 +16,7 @@
     </p>
     <p>
         <label>State No.</label>
-        <asp:TextBox ID="txtStateNo" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtStateNo" Text="Enter" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfv2" runat="server"  
             ControlToValidate="txtStateNo" 
             Text="State No. is required." />

@@ -13,11 +13,12 @@ namespace SRS.Secure
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.txtDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-            this.txtDate.Enabled = false;
+            
 
             if (!this.IsPostBack)
             {
+                this.txtDate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+                this.txtDate.Enabled = false;
                 populateEStateType();
             }
 

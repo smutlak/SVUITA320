@@ -4,7 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
      
     
-<div class="workArea">
     <p>
         <label>Date</label>
         <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
@@ -18,7 +17,7 @@
         <label>State No.</label>
         <asp:TextBox ID="txtStateNo" Text="Enter" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfv2" runat="server"  
-            ControlToValidate="txtStateNo" 
+            ControlToValidate="txtStateNo"
             Text="State No. is required." />
     </p>
     <p>
@@ -27,10 +26,10 @@
         <asp:RequiredFieldValidator ID="rfv3" runat="server" ControlToValidate="txtAddress" InitialValue="Please select" ErrorMessage="Please enter address"  />
     </p>
     <p>
-        <asp:Button ID="btnOK" runat="server" Text="Submit" ValidationGroup="SaveApplication" CausesValidation="true" 
-            CssClass="commandButton" OnClick="btnOK_Click" /></p>
+        <asp:Button ID="btnOK" runat="server" Text="Submit"  
+            CssClass="commandButton"  OnClick="btnOK_Click" 
+            OnClientClick = "if (!Page_ClientValidate()) return false; if (!confirm('Submit Application?')) return false;"/></p>
 
     
-</div>
 
 </asp:Content>

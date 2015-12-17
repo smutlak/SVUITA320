@@ -1,15 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master-For-Admin.master" AutoEventWireup="true" CodeBehind="adminWelcome.aspx.cs" Inherits="SRS.adminWelcome" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <!--<asp:Label ID="Label1" runat="server" Text="label"></asp:Label>-->
+    
     <div>
         <asp:SqlDataSource ID="appDataSource" Runat="server" 
           SelectCommand ="SELECT [appl_id], [appl_sysuser_id], [appl_date], [appl_estate_type_id], [appl_estate_no], [appl_estate_address], [appl_assign_sysuser_id], [appl_assign_date] FROM [user_application]"
             ConnectionString= "<%$ ConnectionStrings:SRSDB %>" 
                 DataSourceMode="DataReader">
         </asp:SqlDataSource>
-        <asp:GridView ID="appGridView" Runat="server" 
+        <asp:GridView ID="appGridView" Runat="server" OnRowCommand="appGridView_RowCommand1"
              DataSourceID="appDataSource" Width="100%"
             DataKeyNames="appl_id" AutoGenerateColumns="False"
             BorderWidth="1px" BackColor="White" 
@@ -52,9 +54,10 @@
                   DataField="appl_assign_sysuser_id" 
                   SortExpression="appl_assign_sysuser_id"></asp:BoundField>
 
-                <asp:BoundField HeaderText="assign date" 
-                  DataField="appl_assign_date" 
-                  SortExpression="appl_assign_date"></asp:BoundField>
+                <asp:ButtonField ButtonType="Button" commandname="doAssign" Text="Assign" 
+                    ControlStyle-Width="75" ControlStyle-BackColor="#ffcc00" 
+                    ControlStyle-Font-Bold="true"   />
+                
 
                 
             </Columns>

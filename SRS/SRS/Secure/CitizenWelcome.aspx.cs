@@ -16,40 +16,15 @@ namespace SRS
             if (!this.IsPostBack)
             {
                 Label1.Text = "Welcome [" + Session["userName"].ToString() + "] as CITIZEN";
-                appDataSource.SelectCommand = "SELECT [appl_id], [appl_sysuser_id], [appl_date], " +
-                    "[appl_estate_type_id], [appl_estate_no], [appl_estate_address], [appl_assign_sysuser_id], " +
+                appDataSource.SelectCommand = "SELECT [appl_id], [appl_sysuser_id], " +
+                    "convert(nvarchar(256), [appl_date], 106 ) as [appl_date], " +
+                    "(Select estate_type_name from estate_type where estate_type_id = [appl_estate_type_id]) as estate_type_name, " +
+                    " [appl_estate_no], [appl_estate_address], [appl_assign_sysuser_id], " +
                     "[appl_assign_date] FROM [user_application] " +
                     " WHERE appl_sysuser_id=" + Session["userId"];
-                //populateApplications();
+                
             }
         }
 
-        /*private void populateApplications()
-        {
-            string constr = WebConfigurationManager.ConnectionStrings["SRSDB"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-         * 
-                using (SqlCommand cmd = new SqlCommand("SELECT [appl_id] " +
-                                                      ",[appl_sysuser_id] " +
-                                                      ",[appl_date] " +
-                                                      ",[appl_estate_type_id] " +
-                                                      ",[appl_estate_no] " +
-                                                      ",[appl_estate_address] " +
-                                                      ",[appl_assign_sysuser_id] " +
-                                                      ",[appl_assign_date] " +
-                                                  "FROM [user_application]"))
-                {
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    GridView1.DataSource = cmd.ExecuteReader();
-                    ddlStateType.DataTextField = "estate_type_name";
-                    ddlStateType.DataValueField = "estate_type_id";
-                    ddlStateType.DataBind();
-                    con.Close();
-                }
-            }
-        }*/
     }
 }

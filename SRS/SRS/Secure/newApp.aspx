@@ -15,7 +15,7 @@
     </p>
     <p>
         <label>State No.</label>
-        <asp:TextBox ID="txtStateNo" Text="Enter" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtStateNo"  runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfv2" runat="server"  
             ControlToValidate="txtStateNo"
             Text="State No. is required." />
@@ -23,7 +23,9 @@
     <p>
         <label>State Address</label>
         <asp:TextBox ID="txtAddress" runat="server" ></asp:TextBox>
-        <asp:RequiredFieldValidator ID="rfv3" runat="server" ControlToValidate="txtAddress" InitialValue="Please select" ErrorMessage="Please enter address"  />
+        <asp:RequiredFieldValidator ID="rfv3" runat="server"  
+            ControlToValidate="txtAddress"
+            Text="Address is required." />
     </p>
     <p>
         <asp:Button ID="btnOK" runat="server" Text="Submit"  

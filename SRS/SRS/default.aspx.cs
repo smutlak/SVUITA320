@@ -36,7 +36,7 @@ namespace SRS
             string sqlstring;
             //sqlstring = "Select sysuser_name, sysuser_password from [sys_user] where sysuser_name='" + username + "' and sysuser_password ='" + password + "'";
 
-            sqlstring = "Select usr.sysuser_name, r.sysrole_name" +
+            sqlstring = "Select usr.sysuser_name, usr.sysuser_id, r.sysrole_name" +
                         " from [sys_user] usr inner join [sys_role] r on r.sysrole_id = usr.sysuser_role_id " +
                         " where usr.sysuser_name='" + Login1.UserName + "' and usr.sysuser_password ='" + Login1.Password + "'";
 
@@ -63,12 +63,14 @@ namespace SRS
                 {
 
                     String userName = reader.GetString(0);
-                    String roleName = reader.GetString(1);
+                    int userId = reader.GetInt32(1);
+                    String roleName = reader.GetString(2);
 
                     e.Authenticated = true;
                     Session["Check"] = true;
                     Session["userName"] = userName;
                     Session["roleName"] = roleName;
+                    Session["userId"] = userId;
 
                 }
                 else

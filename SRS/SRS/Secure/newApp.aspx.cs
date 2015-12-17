@@ -52,6 +52,38 @@ namespace SRS.Secure
                 String estateType = ddlStateType.SelectedValue;
                 String strStateNo = txtStateNo.Text;
                 String strAddress = txtAddress.Text;
+
+                String sqlstring;
+                
+                sqlstring = "insert into user_application " +
+                            " select isnull(max(appl_id), 0)+1, " +
+                            Session["userId"] +
+                            " ,GETDATE() " +
+                            " ,"+estateType +
+                            " ,'" + strStateNo + "' " +
+                            " ,'" + strAddress + "' " +
+                            " ,null " +
+                            " ,null " +
+                            " from user_application";
+
+                // create a connection with sqldatabase 
+                System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(
+                    WebConfigurationManager.ConnectionStrings["SRSDB"].ConnectionString);
+                // create a sql command which will user connection string and your select statement string 
+                System.Data.SqlClient.SqlCommand comm = new System.Data.SqlClient.SqlCommand(sqlstring, con);
+
+                // create a sqldatabase reader which will execute the above command to get the values from sqldatabase
+                try
+                {
+                    con.Open();
+                    if (comm.ExecuteNonQuery() > 0)
+                    {
+                    }
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
         }
     }

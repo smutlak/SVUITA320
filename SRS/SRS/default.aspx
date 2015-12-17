@@ -2,5 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Login ID="Login1" runat="server" CreateUserText="SIGN UP" CreateUserUrl="~/signup.aspx" DisplayRememberMe="False" EnableTheming="False" OnAuthenticate="Login1_Authenticate" TitleText=""></asp:Login>
+    <asp:Login ID="Login1" runat="server" CreateUserText="SIGN UP" CssClass="forminput"
+        CreateUserUrl="~/signup.aspx" DisplayRememberMe="False" LoginButtonStyle-CssClass="submit"
+        EnableTheming="False" OnAuthenticate="Login1_Authenticate" 
+        TitleText=""></asp:Login>
 </asp:Content>

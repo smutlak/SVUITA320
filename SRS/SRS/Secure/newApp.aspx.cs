@@ -78,6 +78,7 @@ namespace SRS.Secure
                     con.Open();
                     if (comm.ExecuteNonQuery() > 0)
                     {
+                        Response.Redirect("~/Secure/CitizenWelcome.aspx");
                     }
                 }
                 finally

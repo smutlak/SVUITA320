@@ -2,8 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-     
-    
     <p>
         <label>Date</label>
         <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
@@ -30,8 +28,8 @@
     <p>
         <asp:Button ID="btnOK" runat="server" Text="Submit"  
             CssClass="commandButton"  OnClick="btnOK_Click" 
-            OnClientClick = "if (!Page_ClientValidate()) return false; if (!confirm('Submit Application?')) return false;"/></p>
+            OnClientClick = "if (!Page_ClientValidate()) return false; if (!confirm('Submit Application?')) return false;"/>
 
-    
+    </p>
 
 </asp:Content>

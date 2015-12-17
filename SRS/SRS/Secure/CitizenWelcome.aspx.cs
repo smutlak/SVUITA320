@@ -29,6 +29,7 @@ namespace SRS
             string constr = WebConfigurationManager.ConnectionStrings["SRSDB"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
+         * 
                 using (SqlCommand cmd = new SqlCommand("SELECT [appl_id] " +
                                                       ",[appl_sysuser_id] " +
                                                       ",[appl_date] " +

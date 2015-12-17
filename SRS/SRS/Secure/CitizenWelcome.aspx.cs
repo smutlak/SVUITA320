@@ -15,7 +15,7 @@ namespace SRS
         {
             if (!this.IsPostBack)
             {
-                Label1.Text = "Welcome [" + Session["userName"].ToString() + "] as CITIZEN";
+                //Label1.Text = "Welcome [" + Session["userName"].ToString() + "] as CITIZEN";
                 appDataSource.SelectCommand = "SELECT [appl_id], [appl_sysuser_id], " +
                     "convert(nvarchar(256), [appl_date], 106 ) as [appl_date], " +
                     "(Select estate_type_name from estate_type where estate_type_id = [appl_estate_type_id]) as estate_type_name, " +

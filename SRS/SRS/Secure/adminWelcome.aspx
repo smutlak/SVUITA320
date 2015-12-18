@@ -4,6 +4,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <!--<asp:Label ID="Label1" runat="server" Text="label"></asp:Label>-->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnSubmit").click(function () {
+                alert("Alert using jQuery");
+            });
+        });
+</script>
+    <input type="button" value="Test" id="btnSubmit" />
     
     <div>
         <asp:SqlDataSource ID="appDataSource" Runat="server" 

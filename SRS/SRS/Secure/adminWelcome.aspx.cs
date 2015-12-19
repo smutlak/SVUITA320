@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -21,10 +23,31 @@ namespace SRS
                     " [appl_estate_no], [appl_estate_address], [appl_assign_sysuser_id], " +
                     "[appl_assign_date] FROM [user_application] ";
                    // " WHERE appl_sysuser_id=" + Session["userId"];
+                populateVolunteers();
 
             }
         }
 
+        private void populateVolunteers()
+        {
+            string constr = WebConfigurationManager.ConnectionStrings["SRSDB"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT [sysuser_id], [sysuser_name] "+
+                                            " FROM [sys_user] inner join sys_role on sys_role.sysrole_id = sys_user.sysuser_role_id "+
+                                            " WHERE sysrole_name='volunteers'"))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    ddlvolunteer.DataSource = cmd.ExecuteReader();
+                    ddlvolunteer.DataTextField = "sysuser_name";
+                    ddlvolunteer.DataValueField = "sysuser_id";
+                    ddlvolunteer.DataBind();
+                    con.Close();
+                }
+            }
+        }
         
 
         protected void appGridView_RowCommand1(object sender, GridViewCommandEventArgs e)

@@ -20,7 +20,7 @@
 
     <script type="text/javascript">
         $(document).on("click", "[id*=lnkView]", function () {
-
+            $("#ApplicationID").html($(".Id", $(this).closest("tr")).html());
             $("#name").html($(".Name", $(this).closest("tr")).html());
 
             $("#dialog").dialog({
@@ -40,7 +40,8 @@
         });
 
         function doAssign() {
-            window.location = '/Secure/adminWelcome.aspx?appID=' + 2+'&vID='+5;
+            
+            window.location = '/Secure/adminWelcome.aspx?appID=' + $("#ApplicationID").text() + '&vID=' + 5;
            // window.load("adminWelcome.aspx",
             //                         { appID: 2 });
         }
@@ -68,6 +69,7 @@
                 <asp:BoundField ReadOnly="True"
                     HeaderText="ID" InsertVisible="False"
                     DataField="appl_id"
+                    ItemStyle-CssClass="Id"
                     SortExpression="appl_id"></asp:BoundField>
 
                 <asp:BoundField HeaderText="Citizan Name"
@@ -107,6 +109,8 @@
         </asp:GridView>
     </div>
     <div id="dialog" style="display: none">
+        <b>Application ID:</b> <label id="ApplicationID"></label>
+        <br />
         <b>Name:</b><asp:DropDownList ID="ddlvolunteer" runat="server"></asp:DropDownList>
 
     </div>

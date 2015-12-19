@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-   <!-- <asp:Label ID="Label1" runat="server" Text="label"></asp:Label>-->
+   <h1>Applications</h1>
     <div>
         <asp:SqlDataSource ID="appDataSource" Runat="server" 
           SelectCommand ="SELECT [appl_id], [appl_sysuser_id], [appl_date], [appl_estate_type_id], [appl_estate_no], [appl_estate_address], [appl_assign_sysuser_id], [appl_assign_date] FROM [user_application]"
@@ -47,12 +47,12 @@
                   SortExpression="appl_estate_address"></asp:BoundField>
 
                 <asp:BoundField HeaderText="assignee" 
-                  DataField="appl_assign_sysuser_id" 
-                  SortExpression="appl_assign_sysuser_id"></asp:BoundField>
+                  DataField="assignee_user_name" 
+                  SortExpression="assignee_user_name"></asp:BoundField>
 
                 <asp:BoundField HeaderText="assign date" 
-                  DataField="appl_assign_date" 
-                  SortExpression="appl_assign_date"></asp:BoundField>
+                  DataField="assign_date" 
+                  SortExpression="assign_date"></asp:BoundField>
 
                 
             </Columns>

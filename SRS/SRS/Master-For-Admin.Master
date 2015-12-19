@@ -37,7 +37,6 @@
           <div class="sbilinks">
             <!-- **** INSERT ADDITIONAL LINKS HERE **** -->
             <ul>
-              <li><a href="#">Assign To</a></li>
               <li><a href="#">Brows Applications</a></li>
               <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/signout.aspx">Sign Out</asp:HyperLink></li>
             </ul>

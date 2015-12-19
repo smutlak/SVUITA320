@@ -13,7 +13,11 @@ namespace SRS.Secure
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["userId"] == null || !User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("~/default.aspx");
+                return;
+            }
 
             if (!this.IsPostBack)
             {

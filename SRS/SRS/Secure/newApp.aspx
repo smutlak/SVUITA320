@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <h1>New Application</h1>
     <asp:Table Width="80%" runat="server">
         <asp:TableRow>
             <asp:TableCell><label>Date</label></asp:TableCell>

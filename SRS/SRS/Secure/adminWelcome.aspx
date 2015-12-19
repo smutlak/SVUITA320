@@ -40,14 +40,15 @@
         });
 
         function doAssign() {
-            
-            window.location = '/Secure/adminWelcome.aspx?appID=' + $("#ApplicationID").text() + '&vID=' + 5;
+           // alert($('#<%=ddlvolunteer.ClientID %> option:selected').val());
+            window.location = '/Secure/adminWelcome.aspx?appID=' + $("#ApplicationID").text() + '&vID=' + 
+                $('#<%=ddlvolunteer.ClientID %> option:selected').val();
            // window.load("adminWelcome.aspx",
             //                         { appID: 2 });
         }
 
     </script>
-
+    <h1>All Application</h1>
     <div>
         <asp:SqlDataSource ID="appDataSource" runat="server"
             SelectCommand="SELECT [appl_id], [appl_sysuser_id], [appl_date], [appl_estate_type_id], [appl_estate_no], [appl_estate_address], [appl_assign_sysuser_id], [appl_assign_date] FROM [user_application]"
@@ -93,8 +94,12 @@
                     SortExpression="appl_estate_address"></asp:BoundField>
 
                 <asp:BoundField HeaderText="assignee"
-                    DataField="appl_assign_sysuser_id"
-                    SortExpression="appl_assign_sysuser_id"></asp:BoundField>
+                    DataField="assignee_user_name"
+                    SortExpression="assignee_user_name"></asp:BoundField>
+
+                <asp:BoundField HeaderText="assignee"
+                    DataField="assign_date"
+                    SortExpression="assign_date"></asp:BoundField>
 
                 <asp:TemplateField>
                     <ItemTemplate>

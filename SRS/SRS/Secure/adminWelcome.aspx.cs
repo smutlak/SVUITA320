@@ -13,7 +13,20 @@ namespace SRS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            string sAppID = Request.Params["appID"] ?? "";
+            string sVID = Request.Params["vID"] ?? "";
+            int appID = 0;
+            try
+            {
+                appID = Int16.Parse(sAppID);
+            }
+            catch (System.FormatException)
+            {
+            }
+            if (appID > 0)
+            {
+                
+            }
             if (!this.IsPostBack)
             {
                // Label1.Text = "Welcome [" + Session["userName"].ToString() + "] as ADMIN";

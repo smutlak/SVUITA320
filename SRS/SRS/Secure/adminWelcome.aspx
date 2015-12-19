@@ -27,7 +27,8 @@
                 title: "Assign to volunteer",
                 buttons: {
                     Ok: function () {
-                        $(this).dialog('close');
+                        doAssign();
+                        //$(this).dialog('close');
                     },
                     Cancel: function () {
                         $(this).dialog('close');
@@ -37,6 +38,13 @@
             });
             return false;
         });
+
+        function doAssign() {
+            window.location = '/Secure/adminWelcome.aspx?appID=' + 2+'&vID='+5;
+           // window.load("adminWelcome.aspx",
+            //                         { appID: 2 });
+        }
+
     </script>
 
     <div>

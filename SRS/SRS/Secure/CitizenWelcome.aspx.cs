@@ -27,7 +27,6 @@ namespace SRS
                     " [appl_estate_no], [appl_estate_address], (Select sysuser_name from sys_user where  sysuser_id = [appl_assign_sysuser_id]) as assignee_user_name, " +
                     "convert(nvarchar(256), [appl_assign_date], 106 ) as [assign_date] FROM [user_application] " +
                     " WHERE appl_sysuser_id=" + Session["userId"];
-                
             }
         }
 

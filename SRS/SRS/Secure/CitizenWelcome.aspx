@@ -14,7 +14,7 @@
             DataKeyNames="appl_id" AutoGenerateColumns="False"
             BorderWidth="1px" BackColor="White" 
              CellPadding="3" CellSpacing="2" BorderStyle="Solid" 
-             BorderColor="Black">
+             BorderColor="Black" ShowHeaderWhenEmpty="True" EmptyDataText="No records Found">
             <FooterStyle ForeColor="#8C4510" 
               BackColor="#F7DFB5"></FooterStyle>
             <PagerStyle ForeColor="#8C4510" 

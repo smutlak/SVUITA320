@@ -85,7 +85,7 @@ namespace SRS
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT [sysuser_id], [sysuser_name] "+
                                             " FROM [sys_user] inner join sys_role on sys_role.sysrole_id = sys_user.sysuser_role_id "+
-                                            " WHERE sysrole_name='volunteers'"))
+                                            " WHERE sysrole_name='Volunteer'"))
                 {
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.Connection = con;

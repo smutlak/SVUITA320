@@ -18,11 +18,11 @@ namespace SRS
                 // If User is Authenticated then moved to a main page
                 if (User.Identity.IsAuthenticated)
                 {
-                    if ((Session["roleName"] != null) && (Session["roleName"].Equals("admins")))
+                    if ((Session["roleName"] != null) && (Session["roleName"].Equals("Administrator")))
                     {
                         Response.Redirect("~/Secure/adminWelcome.aspx");
                     }
-                    else if ((Session["roleName"] != null) && (Session["roleName"].Equals("citizens")))
+                    else if ((Session["roleName"] != null) && (Session["roleName"].Equals("Applicant")))
                     {
                         Response.Redirect("~/Secure/CitizenWelcome.aspx");
                     }
@@ -34,18 +34,15 @@ namespace SRS
         {
 
             string sqlstring;
-            //sqlstring = "Select sysuser_name, sysuser_password from [sys_user] where sysuser_name='" + username + "' and sysuser_password ='" + password + "'";
 
             sqlstring = "Select usr.sysuser_name, usr.sysuser_id, r.sysrole_name" +
                         " from [sys_user] usr inner join [sys_role] r on r.sysrole_id = usr.sysuser_role_id " +
                         " where usr.sysuser_name='" + Login1.UserName + "' and usr.sysuser_password ='" + Login1.Password + "'";
 
             // create a connection with sqldatabase 
-           // System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(
-           //              " Data Source=SD;Initial Catalog=SRS;User ID=sa;Password=Ab123456;Connect Timeout=10;TrustServerCertificate=True ");
             System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(
                 WebConfigurationManager.ConnectionStrings["SRSDB"].ConnectionString);
-            // create a sql command which will user connection string and your select statement string 
+            
             System.Data.SqlClient.SqlCommand comm = new System.Data.SqlClient.SqlCommand(sqlstring, con);
 
             // create a sqldatabase reader which will execute the above command to get the values from sqldatabase

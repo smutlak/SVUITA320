@@ -39,9 +39,16 @@
             return false;
         });
 
+        function getAbsolutePath() {
+            var loc = window.location;
+            var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
+            return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
+        }
+
         function doAssign() {
-           // alert($('#<%=ddlvolunteer.ClientID %> option:selected').val());
-            window.location = '/Secure/adminWelcome.aspx?appID=' + $("#ApplicationID").text() + '&vID=' + 
+            // alert($('#<%=ddlvolunteer.ClientID %> option:selected').val());
+            
+            window.location = getAbsolutePath()+'adminWelcome.aspx?appID=' + $("#ApplicationID").text() + '&vID=' + 
                 $('#<%=ddlvolunteer.ClientID %> option:selected').val();
            // window.load("adminWelcome.aspx",
             //                         { appID: 2 });
